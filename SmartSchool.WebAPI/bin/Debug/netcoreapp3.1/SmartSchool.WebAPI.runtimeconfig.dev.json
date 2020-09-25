@@ -1,8 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\meutudo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\meutudo\\.nuget\\packages"
-    ]
-  }
-}
