@@ -10,13 +10,13 @@ namespace SmartSchool.WebAPI.Data
     bool SaveChanges();
 
     // ALUNOS
-    Aluno[] GetAllAlunos();
-    Aluno[] GetAllAlunosByDisciplinaId();
-    Aluno[] GetAllAlunoById();
+    Aluno[] GetAllAlunos(bool includeProfessor = false);
+    Aluno[] GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false);
+    Aluno GetAllAlunoById(int alunoId, bool includeProfessor = false);
 
     //PROFESSORES
-    Professor[] GetAllProfessores();
-    Professor[] GetAllProfessoresByDisciplinaId();
-    Professor[] GetAllProfessorById();
+    Professor[] GetAllProfessores(bool includeAlunos = false);
+    Professor[] GetAllProfessoresByDisciplinaId(int disciplinaId, bool includeDisciplinas = false);
+    Professor GetAllProfessorById(int professorId, bool includeProfessor = false);
   }
 }
