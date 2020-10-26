@@ -13,7 +13,7 @@ namespace SmartSchool.WebAPI.Controllers
   {
     public readonly IRepository _repo;
 
-    public AlunoController(SmartSchoolContext context, IRepository repo)
+    public AlunoController(IRepository repo)
     {
       _repo = repo;
     }
@@ -30,7 +30,7 @@ namespace SmartSchool.WebAPI.Controllers
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
-      var result = _repo.GetAllAlunoById(id, false);
+      var result = _repo.GetAlunoById(id, false);
       if (result == null) return BadRequest("O Aluno não foi encontrado!!");
 
       return Ok(result);
@@ -53,7 +53,7 @@ namespace SmartSchool.WebAPI.Controllers
     [HttpPut("{id}")]
     public IActionResult Put(int id, Aluno aluno)
     {
-      var result = _repo.GetAllAlunoById(id);
+      var result = _repo.GetAlunoById(id, false);
       if (result == null) return BadRequest("Aluno não encontrado!");
 
       _repo.Update(aluno);
@@ -69,11 +69,11 @@ namespace SmartSchool.WebAPI.Controllers
     [HttpPatch("{id}")]
     public IActionResult Patch(int id, Aluno aluno)
     {
-      var result = _repo.GetAllAlunoById(id);
+      var result = _repo.GetAlunoById(id, false);
       if (result == null) return BadRequest("Aluno não encontrado!");
 
-      _context.Update(aluno);
-      _context.SaveChanges();
+      _repo.Update(aluno);
+      _repo.SaveChanges();
       return Ok(aluno);
     }
 
@@ -81,7 +81,7 @@ namespace SmartSchool.WebAPI.Controllers
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
-      var result = _repo.GetAllAlunoById(id);
+      var result = _repo.GetAlunoById(id, false);
       if (result == null) return BadRequest("Aluno não encontrado!");
 
       _repo.Remove(result);

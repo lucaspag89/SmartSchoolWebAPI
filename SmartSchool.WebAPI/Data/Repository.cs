@@ -69,7 +69,7 @@ namespace SmartSchool.WebAPI.Data
       return query.ToArray();
     }
 
-    public Aluno GetAllAlunoById(int alunoId, bool includeProfessor = false)
+    public Aluno GetAlunoById(int alunoId, bool includeProfessor = false)
     {
       IQueryable<Aluno> query = _context.Alunos;
 
@@ -124,7 +124,7 @@ namespace SmartSchool.WebAPI.Data
       return query.ToArray();
     }
 
-    public Professor GetAllProfessorById(int professorId, bool includeProfessor = false)
+    public Professor GetProfessorById(int professorId, bool includeProfessor = false)
     {
       IQueryable<Professor> query = _context.Professores;
 
