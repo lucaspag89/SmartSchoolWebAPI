@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
+using SmartSchool.WebAPI.DTO;
 using SmartSchool.WebAPI.Models;
 
 namespace SmartSchool.WebAPI.Controllers
@@ -22,8 +23,19 @@ namespace SmartSchool.WebAPI.Controllers
     [HttpGet]
     public IActionResult Get()
     {
-      var result = _repo.GetAllAlunos(true);
-      return Ok(result);
+      var alunos = _repo.GetAllAlunos(true);
+      var alunosRetorno = new List<AlunoDTO>();
+
+      foreach (var aluno in alunos)
+      {
+        alunosRetorno.Add(new AlunoDTO()
+        {
+          Id = aluno.Id,
+
+        });
+      }
+
+      return Ok(alunos);
     }
 
     // api/aluno/(id)
