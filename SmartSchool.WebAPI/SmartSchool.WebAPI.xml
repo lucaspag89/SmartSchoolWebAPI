@@ -4,5 +4,39 @@
         <name>SmartSchool.WebAPI</name>
     </assembly>
     <members>
+<<<<<<< HEAD
+=======
+        <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get">
+            <summary>
+            Método para retornar todos os alunos.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetRegister">
+            <summary>
+            Método responsável por retonar apenas um único AlunoDTO.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retonar apenas um Aluno por meio do Código ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+>>>>>>> 1752f3abfe020c0dbf3704ae4322bcffff40e096
     </members>
 </doc>
