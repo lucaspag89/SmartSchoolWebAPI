@@ -4,8 +4,6 @@
         <name>SmartSchool.WebAPI</name>
     </assembly>
     <members>
-<<<<<<< HEAD
-=======
         <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
             <summary>
             
@@ -37,6 +35,20 @@
             <param name="id"></param>
             <returns></returns>
         </member>
->>>>>>> 1752f3abfe020c0dbf3704ae4322bcffff40e096
+        <member name="T:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO">
+            <summary>
+            Este é o DTO de Aluno para registros.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO.Id">
+            <summary>
+            Identificador e chave do banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO.Matricula">
+            <summary>
+            Chave do Aluno.
+            </summary>
+        </member>
     </members>
 </doc>
