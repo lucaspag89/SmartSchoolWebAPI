@@ -55,11 +55,11 @@ namespace SmartSchool.WebAPI
                 opt.ReportApiVersions = true;
             });
 
-            var apiProviderDescription = services.BuildServiceProvider().GetService<IApiVersionDescriptionProvider>();
+            var apiVersionDescriptionProvider = services.BuildServiceProvider().GetService<IApiVersionDescriptionProvider>();
 
             services.AddSwaggerGen(opt =>
             {
-                foreach (var description in apiProviderDescription.ApiVersionDescriptions)
+                foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
                 {
                     opt.SwaggerDoc(
                         description.GroupName,
@@ -92,7 +92,7 @@ namespace SmartSchool.WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider apiVersionDescriptionProvider)
         {
             if (env.IsDevelopment())
             {
