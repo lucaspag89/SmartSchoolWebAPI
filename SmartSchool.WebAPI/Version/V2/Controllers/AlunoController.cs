@@ -4,17 +4,17 @@ using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
-using SmartSchool.WebAPI.DTO;
 using SmartSchool.WebAPI.Models;
+using SmartSchool.WebAPI.V1.DTO;
 
-namespace SmartSchool.WebAPI.Controllers
+namespace SmartSchool.WebAPI.V2.Controllers
 {
     /// <summary>
-    /// 
+    /// Versão 2 - Controlador de alunos
     /// </summary>
     [ApiController]
-    [ApiVersion("1.0")]
-    [Route("api//v{version:apiVersion}/[controller]")]
+    [ApiVersion("2.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class AlunoController : ControllerBase
     {
         public readonly IRepository _repo;
@@ -29,29 +29,6 @@ namespace SmartSchool.WebAPI.Controllers
         {
             _repo = repo;
             _mapper = mapper;
-        }
-
-        /// <summary>
-        /// Método para retornar todos os alunos.
-        /// </summary>
-        /// <returns></returns>
-        // api/aluno
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var alunos = _repo.GetAllAlunos(true);
-
-            return Ok(_mapper.Map<IEnumerable<AlunoDTO>>(alunos));
-        }
-
-        /// <summary>
-        /// Método responsável por retonar apenas um único AlunoDTO.
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("getRegister")]
-        public IActionResult GetRegister()
-        {
-            return Ok(new AlunoRegistrarDto());
         }
 
         /// <summary>
@@ -91,24 +68,6 @@ namespace SmartSchool.WebAPI.Controllers
         public IActionResult Put(int id, AlunoRegistrarDTO model)
         {
             var aluno = _repo.GetAlunoById(id);
-            if (aluno == null) return BadRequest("Aluno não encontrado!");
-
-            _mapper.Map(model, aluno);
-
-            _repo.Update(aluno);
-            if (_repo.SaveChanges())
-            {
-                return Created($"/api/aluno/{model.Id}", _mapper.Map<AlunoDTO>(aluno));
-            };
-
-            return BadRequest("Não foi possível atualizar os dados do aluno!");
-        }
-
-        // api/aluno
-        [HttpPatch("{id}")]
-        public IActionResult Patch(int id, AlunoRegistrarDTO model)
-        {
-            var aluno = _repo.GetAlunoById(id, false);
             if (aluno == null) return BadRequest("Aluno não encontrado!");
 
             _mapper.Map(model, aluno);

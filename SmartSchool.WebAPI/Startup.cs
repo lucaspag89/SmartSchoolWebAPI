@@ -108,7 +108,10 @@ namespace SmartSchool.WebAPI
             app.UseSwagger()
               .UseSwaggerUI(opt =>
               {
-                  opt.SwaggerEndpoint("http://localhost:24835/swagger/smartschoolapi/swagger.json", "smartschoolapi");
+                  foreach (var description in apiVersionDescriptionProvider.ApiVersionDescriptions)
+                  {
+                      opt.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+                  }
                   opt.RoutePrefix = "";
 
               });

@@ -4,51 +4,75 @@
         <name>SmartSchool.WebAPI</name>
     </assembly>
     <members>
-        <member name="T:SmartSchool.WebAPI.Controllers.AlunoController">
+        <member name="T:SmartSchool.WebAPI.V1.Controllers.AlunoController">
             <summary>
-            
+            Versão 1 - Controlador de alunos
             </summary>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
             <summary>
             
             </summary>
             <param name="repo"></param>
             <param name="mapper"></param>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.Get">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.Get">
             <summary>
             Método para retornar todos os alunos.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetRegister">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.GetRegister">
             <summary>
             Método responsável por retonar apenas um único AlunoDTO.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SmartSchool.WebAPI.Controllers.AlunoController.GetById(System.Int32)">
+        <member name="M:SmartSchool.WebAPI.V1.Controllers.AlunoController.GetById(System.Int32)">
             <summary>
             Método responsável por retonar apenas um Aluno por meio do Código ID
             </summary>
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="T:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO">
+        <member name="T:SmartSchool.WebAPI.V1.Controllers.ProfessorController">
+            <summary>
+            Versão 1 - Controlador de professores
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO">
             <summary>
             Este é o DTO de Aluno para registros.
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO.Id">
+        <member name="P:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO.Id">
             <summary>
             Identificador e chave do banco.
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.DTO.AlunoRegistrarDTO.Matricula">
+        <member name="P:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO.Matricula">
             <summary>
             Chave do Aluno.
             </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V2.Controllers.AlunoController">
+            <summary>
+            Versão 2 - Controlador de alunos
+            </summary>
+        </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.#ctor(SmartSchool.WebAPI.Data.IRepository,AutoMapper.IMapper)">
+            <summary>
+            
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+        </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retonar apenas um Aluno por meio do Código ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

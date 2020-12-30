@@ -1,6 +1,6 @@
 using AutoMapper;
-using SmartSchool.WebAPI.DTO;
 using SmartSchool.WebAPI.Models;
+using SmartSchool.WebAPI.V1.DTO;
 
 namespace SmartSchool.WebAPI.Helpers
 {
