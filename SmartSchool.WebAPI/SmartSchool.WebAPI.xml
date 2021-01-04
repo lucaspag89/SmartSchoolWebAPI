@@ -40,17 +40,42 @@
             Versão 1 - Controlador de professores
             </summary>
         </member>
-        <member name="T:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO">
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoDTO.Id">
+            <summary>
+            Identificador e chave do Banco
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoDTO.Matricula">
+            <summary>
+            Chave do Aluno, para outros negócios na Instituição
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoDTO.Nome">
+            <summary>
+            Nome e o Primeiro nome o o Sobrenome do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoDTO.Idade">
+            <summary>
+            Esta idade é o calculo relacionado a data de nascimento do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoDTO.Ativo">
+            <summary>
+            Ativar ou não o Aluno
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V1.DTOs.AlunoRegistrarDTO">
             <summary>
             Este é o DTO de Aluno para registros.
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO.Id">
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoRegistrarDTO.Id">
             <summary>
             Identificador e chave do banco.
             </summary>
         </member>
-        <member name="P:SmartSchool.WebAPI.V1.DTO.AlunoRegistrarDTO.Matricula">
+        <member name="P:SmartSchool.WebAPI.V1.DTOs.AlunoRegistrarDTO.Matricula">
             <summary>
             Chave do Aluno.
             </summary>
@@ -73,6 +98,46 @@
             </summary>
             <param name="id"></param>
             <returns></returns>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Id">
+            <summary>
+            Identificador e chave do Banco
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Matricula">
+            <summary>
+            Chave do Aluno, para outros negócios na Instituição
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Nome">
+            <summary>
+            Nome e o Primeiro nome o o Sobrenome do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Idade">
+            <summary>
+            Esta idade é o calculo relacionado a data de nascimento do Aluno
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Ativo">
+            <summary>
+            Ativar ou não o Aluno
+            </summary>
+        </member>
+        <member name="T:SmartSchool.WebAPI.V2.DTOs.AlunoRegistrarDTO">
+            <summary>
+            Este é o DTO de Aluno para registros.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoRegistrarDTO.Id">
+            <summary>
+            Identificador e chave do banco.
+            </summary>
+        </member>
+        <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoRegistrarDTO.Matricula">
+            <summary>
+            Chave do Aluno.
+            </summary>
         </member>
     </members>
 </doc>

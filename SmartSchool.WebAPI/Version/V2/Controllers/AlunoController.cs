@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartSchool.WebAPI.Data;
 using SmartSchool.WebAPI.Models;
-using SmartSchool.WebAPI.V1.DTO;
+using SmartSchool.WebAPI.V2.DTOs;
 
 namespace SmartSchool.WebAPI.V2.Controllers
 {
