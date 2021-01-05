@@ -84,11 +84,10 @@ namespace SmartSchool.WebAPI.Data
                 query = query.Where(aluno => aluno.Ativo == (pageParams.Ativo != 0));
             }
 
-            //return await query.ToListAsync();
             return await PageList<Aluno>.CreateAsync(query, pageParams.PageNumber, pageParams.PageSize);
         }
 
-        public Aluno[] GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false)
+        public async Task<Aluno[]> GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false)
         {
             IQueryable<Aluno> query = _context.Alunos;
 
@@ -104,7 +103,7 @@ namespace SmartSchool.WebAPI.Data
                 .Where(aluno => aluno.AlunoDisciplinas
                     .Any(ad => ad.DisciplinaId == disciplinaId));
 
-            return query.ToArray();
+            return await query.ToArrayAsync();
         }
 
         public Aluno GetAlunoById(int alunoId, bool includeProfessor = false)
@@ -178,6 +177,26 @@ namespace SmartSchool.WebAPI.Data
                 .Where(professor => professor.Id == professorId);
 
             return query.FirstOrDefault();
+        }
+
+        public Professor[] GetProfessoresByAlunoId(int alunoId, bool includeAlunos = false)
+        {
+            IQueryable<Professor> query = _context.Professores;
+
+            if (includeAlunos)
+            {
+                query = query.Include(p => p.Disciplinas)
+                             .ThenInclude(d => d.AlunoDisciplinas)
+                             .ThenInclude(ad => ad.Aluno);
+            }
+
+            query = query.AsNoTracking()
+                         .OrderBy(a => a.Id)
+                         .Where(aluno => aluno.Disciplinas.Any(
+                             d => d.AlunoDisciplinas.Any(ad => ad.AlunoId == alunoId)
+                         ));
+
+            return query.ToArray();
         }
     }
 }
