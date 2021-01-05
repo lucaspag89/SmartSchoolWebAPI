@@ -1,4 +1,5 @@
 using SmartSchool.WebAPI.Models;
+using System.Threading.Tasks;
 
 namespace SmartSchool.WebAPI.Data
 {
@@ -11,6 +12,7 @@ namespace SmartSchool.WebAPI.Data
 
     // ALUNOS
     Aluno[] GetAllAlunos(bool includeProfessor = false);
+    Task<Aluno[]> GetAllAlunosAsync(bool includeProfessor = false);
     Aluno[] GetAllAlunosByDisciplinaId(int disciplinaId, bool includeProfessor = false);
     Aluno GetAlunoById(int alunoId, bool includeProfessor = false);
 
