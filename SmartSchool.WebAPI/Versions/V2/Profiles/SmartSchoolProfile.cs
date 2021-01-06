@@ -5,24 +5,24 @@ using SmartSchool.WebAPI.V2.DTOs;
 
 namespace SmartSchool.WebAPI.V2.Profiles
 {
-  public class SmartSchoolProfile : Profile
-  {
-    public SmartSchoolProfile()
+    public class SmartSchoolProfile : Profile
     {
-      //Mapeamento do aluno
-      CreateMap<Aluno, AlunoDTO>()
-      .ForMember(
-        dest => dest.Nome,
-        opt => opt.MapFrom(src => $"{src.Nome} {src.Sobrenome}")
-      )
-      .ForMember(
-        dest => dest.Idade,
-        opt => opt.MapFrom(src => src.DataNasc.GetCurrentAge())
-      );
+        public SmartSchoolProfile()
+        {
+            //Mapeamento do aluno
+            CreateMap<Aluno, AlunoDTO>()
+            .ForMember(
+              dest => dest.Nome,
+              opt => opt.MapFrom(src => $"{src.Nome} {src.Sobrenome}")
+            )
+            .ForMember(
+              dest => dest.Idade,
+              opt => opt.MapFrom(src => src.DataNasc.GetCurrentAge())
+            );
 
-      CreateMap<AlunoDTO, Aluno>();
+            CreateMap<AlunoDTO, Aluno>();
 
-      CreateMap<Aluno, AlunoRegistrarDTO>().ReverseMap();
+            CreateMap<Aluno, AlunoRegistrarDTO>().ReverseMap();
+        }
     }
-  }
 }

@@ -13,7 +13,7 @@ namespace SmartSchool.WebAPI.V2.DTOs
         /// </summary>
         public int Matricula { get; set; }
         /// <summary>
-        /// Nome e o Primeiro nome o o Sobrenome do Aluno
+        /// Nome é o primeiro nome e o Sobrenome do Aluno
         /// </summary>
         public string Nome { get; set; }
         public string Telefone { get; set; }

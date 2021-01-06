@@ -22,6 +22,5 @@ namespace SmartSchool.WebAPI.Data
         Professor[] GetAllProfessores(bool includeAlunos = false);
         Professor[] GetAllProfessoresByDisciplinaId(int disciplinaId, bool includeDisciplinas = false);
         Professor GetProfessorById(int professorId, bool includeProfessor = false);
-        Professor[] GetProfessoresByAlunoId(int alunoId, bool includeAlunos = false);
     }
 }
