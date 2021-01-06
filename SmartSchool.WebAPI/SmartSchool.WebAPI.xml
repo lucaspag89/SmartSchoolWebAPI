@@ -92,6 +92,12 @@
             <param name="repo"></param>
             <param name="mapper"></param>
         </member>
+        <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.Get">
+            <summary>
+            Método responsável para retornar todos os meus alunos
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:SmartSchool.WebAPI.V2.Controllers.AlunoController.GetById(System.Int32)">
             <summary>
             Método responsável por retonar apenas um Aluno por meio do Código ID
@@ -111,7 +117,7 @@
         </member>
         <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Nome">
             <summary>
-            Nome e o Primeiro nome o o Sobrenome do Aluno
+            Nome é o primeiro nome e o Sobrenome do Aluno
             </summary>
         </member>
         <member name="P:SmartSchool.WebAPI.V2.DTOs.AlunoDTO.Idade">
